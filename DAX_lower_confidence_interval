@@ -1,0 +1,11 @@
+LCI = 
+ (
+    2 * 'data'[numerator] + NORM.S.INV( ( 100 + 'data'[alpha] ) / 200 ) ^ 2
+        - NORM.S.INV( ( 100 + 'data'[alpha] ) / 200 )
+            * SQRT ( NORM.S.INV( ( 100 + 'data'[alpha] ) / 200 ) ^ 2 + 4 * 'data'[numerator] * ( 1 - 'data'[proportion] ) )
+) / 2 / ( 'data'[denominator] + NORM.S.INV( ( 100 + 'data'[alpha] ) / 200 ) ^ 2 )
+
+// In the example [alpha] = 1-0.05, to give a 95 percent confidence level required for the confidence interval.
+// The Wilson Score method1 gives very accurate approximate confidence intervals for proportions and odds based on the assumption of a Binomial distribution.
+// (1) Wilson EB. Probable inference, the law of succession, and statistical inference. J Am Stat Assoc 1927;22:209-12.
+// (2) Eayres D. APHO Technical Briefing 3: Commonly used public health statistics and their confidence intervals York: APHO; 2008.
